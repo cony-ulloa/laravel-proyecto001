@@ -1,0 +1,1 @@
+<h1>contacto {{ $nombre }} </h1>
