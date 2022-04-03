@@ -12,11 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('vista');
 });
 
-Route::get('/contacto/{nombre?}', function($nombre){
-    return view('contacto', array(
-        "nombre" => $nombre
-    ));
+Route::get('/registrar', function(){
+    return view('registrar');
+});
+Route::get('/consultar', function(){
+    return view('consultar');
+});
+Route::get('/eliminar', function(){
+    return view('eliminar');
+});
+Route::get('/actualizar', function(){
+    return view('actualizar');
+});
+
+Route::get('/login', function(){
+    return view('login');
 });
