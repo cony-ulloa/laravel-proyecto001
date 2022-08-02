@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col col-lg-4">
-            <form action="{{ url('guardarFormulario') }}" method="post">
+            <form action="{{ url('/productos') }}" method="POST">
                 <div class="mb-3">
                     <label for="id" class="form-label">Id: </label>
                     <input type="text" class="form-control" name="id">
