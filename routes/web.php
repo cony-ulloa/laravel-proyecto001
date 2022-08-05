@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('vista');
+    return view('productos/listar');
 });
 
 

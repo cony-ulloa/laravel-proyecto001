@@ -12,7 +12,7 @@ class Sucursal extends Model
     protected $table = 'sucursales';
 
     public function producto(){
-        return $this->belongsTo(Serie::class, 'serie_id');
+        return $this->hasMany(Producto::class);
 }
 
 }

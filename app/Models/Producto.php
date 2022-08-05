@@ -12,8 +12,8 @@ class Producto extends Model
     protected $primaryKey = 'id_producto';
     protected $table = 'productos';
 
-    public function producto_sucursal(){
-        
+    public function sucursal(){
+        return $this->belongsTo(Sucursal::class, 'id_sucursal');
     }
 
 }
