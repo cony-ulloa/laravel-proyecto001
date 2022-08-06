@@ -19,8 +19,8 @@ class CreateStocksTable extends Migration
             $table->integer('cantidad');
             $table->integer('precio');
             $table->string('estado');
-            $table->foreignId('id_sucursal')->constrained();
-            $table->foreignId('id_producto')->constrained();
+            $table->foreign('id_sucursal')->references('id_sucursal')->on('sucursales');
+            $table->foreign('id_producto')->references('id_producto')->on('productos');
         });
     }
 

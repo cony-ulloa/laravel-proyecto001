@@ -19,7 +19,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre');
             $table->string('categoria');
             $table->text('desc');
-            $table->foreignId('id_sucursal')->constrained();
+            $table->foreign('id_sucursal')->references('id_sucursal')->on('sucursales');
             $table->timestamps();
         });
     }

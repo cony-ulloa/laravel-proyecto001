@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Registrar producto')
+@section('title', 'Listar productos')
 
 @section('header')
     @parent

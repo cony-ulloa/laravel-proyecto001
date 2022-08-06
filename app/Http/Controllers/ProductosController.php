@@ -28,10 +28,8 @@ class ProductosController extends Controller
             'codigoUnico' => 'required|integer',
             'nombre' => 'required',
             'categoria' => 'required',
-            'sucursal' => 'required',
             'descripcion' => 'required',
-            'cantidad' => 'integer|min:0|required',
-            'precio' => 'integer|required',
+
 
         ]);
 
@@ -40,10 +38,7 @@ class ProductosController extends Controller
         $producto->codigoUnico = $request.codigoUnico;
         $producto->nombre = $request.nombre;
         $producto->categoria = $request.categoria;
-        $producto-> sucursal = $request.sucursal;
         $producto->descripcion = $request.descripcion;
-        $producto->cantidad = $request.cantidad;
-        $producto->precio = $request.precio;
         $producto->save();
 
         $productos = Producto::get();
@@ -51,11 +46,20 @@ class ProductosController extends Controller
         return view('productos.listar',[
             'productos' => $productos
         ]);
+
+    }
+    
+    public function show($nombre){
+        
+        $producto = Producto::where('nombre', $nombre)->get();
+   
+
+        return view('productos.listar',[
+            'productos' => $producto
+        ]);
+   
     }
 
-   
+
+
 }
-
-
-
-

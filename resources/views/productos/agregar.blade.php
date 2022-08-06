@@ -29,21 +29,17 @@
                     <input type="text" class="form-control" name="categoria">
                 </div>
                 <div class="mb-3">
-                    <label for="sucursal" class="form-label">Sucursal:</label>
-                    <input type="text" class="form-control" name="sucursal">
-                </div>
-                <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripcion:</label>
                     <input type="text" class="form-control" name="descripcion">
                 </div>
                 <div class="mb-3">
-                    <label for="cantidad" class="form-label">Cantidad:</label>
-                    <input type="text" class="form-control" name="cantidad">
+                    @foreach($sucursales as $sucursal)
+                    <select>
+                        <option>{{$sucursal->id_sucursal}} </option>
+                    </select>
+                    @endforeach
                 </div>
-                <div class="mb-3">
-                    <label for="precio" class="form-label">Precio:</label>
-                    <input type="text" class="form-control" name="precio">
-                </div>                
+             
                 <button type="submit" class="btn btn-primary">Agregar producto</button>
                 @if($errors->any())
                 <hr>
