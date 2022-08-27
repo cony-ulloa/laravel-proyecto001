@@ -5,7 +5,7 @@
 <div class="modal-dialog text-center w-50 p-5">
   <div class="col-sm-12">
     <div class="modal-content">
-      <form class="col-12" th:action="@{/login}" method="get">
+      <form class="col-12" th:action="@{/login}" method="POST"  enctype="multipart/form-data">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
           class="bi bi-arrow-up-circle-fill mb-3" viewBox="0 0 16 16">
           <path
@@ -21,6 +21,9 @@
         </div>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Nuevo precio del producto"><br>
+        </div>
+        <div class="form-group">
+            <input type="file" class="form-control" placeholder="Nueva imagen del producto" id="image" name="image" accept=".jpg, .png, .jpeg">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Nueva descripción del producto"><br>

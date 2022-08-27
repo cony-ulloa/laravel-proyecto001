@@ -18,6 +18,7 @@ class CreateProductosTable extends Migration
             $table->integer('codigoUnico');
             $table->string('nombre');
             $table->string('categoria');
+            $table->text('image');
             $table->text('desc');
             $table->foreign('id_sucursal')->references('id_sucursal')->on('sucursales');
             $table->timestamps();

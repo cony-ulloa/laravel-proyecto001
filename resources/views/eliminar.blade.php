@@ -5,7 +5,7 @@
 <div class="modal-dialog text-center w-50 p-5">
   <div class="col-sm-12">
     <div class="modal-content">
-      <form class="col-12" th:action="@{/login}" method="get">
+      <form class="col-12" th:action="@{/login}" method="get" >
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
           class="bi bi-file-earmark-x-fill mb-3" viewBox="0 0 16 16">
           <path

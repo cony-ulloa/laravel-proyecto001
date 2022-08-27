@@ -51,11 +51,21 @@ class ProductosController extends Controller
     'codigoUnico' => 'required',
     'nombre' => 'required',
     'categoria' => 'required',
+    'image' => 'required',
     'desc' => 'required',
     'sucursales_id' => 'required',
     'cantidad' => 'required',
     'precio' => 'required',
 ]);
+
+
+    $imagen = $request->file('image');
+    if($imagen){
+      $imagen_path = time()."-".$imagen->getClientOriginalName();
+      Storage::disk('imagenes')->put($image_path, \File::get($imagen));
+    }
+
+
     /* dd($request); */
       $producto = new Producto();
       $stock = new Stock();
@@ -64,6 +74,7 @@ class ProductosController extends Controller
       $producto->nombre = $request->nombre;
       $producto->categoria = $request->categoria;
       $producto->desc = $request->desc;
+      $producto->image = $imagen_path;
       $producto->save();
       $stock->sucursales_id = $request->sucursales_id;
       $stock->cantidad = $request->cantidad;
@@ -77,6 +88,11 @@ class ProductosController extends Controller
       'productos' => $productos
     ]);
   }
+
+  public function getImagen($filename){
+    $file = \Storage::disk('imagenes')->get($filename);
+    return new Response($file, 200);
+}
 
   /**
    * Display the specified resource.

@@ -23,5 +23,10 @@ Route::get('/sesion', 'SesionController@index');
 Route::get('/menu', 'MenuController@index');
 Route::get('/asignar', 'AsignarController@index');
 Route::get('/eliminar', 'EliminarController@index');
+
 /* Route::get('/productos','ProductosController@index'); //Mostrar todos los productos */
-Route::get('/actualizar/{id}', 'ActualizarController@update');
+Route::get('/actualizar', 'ActualizarController@index');
+Route::post('/actualizar', 'ActualizarController@update');
+
+//Recupera imagen desde storage
+Route::get('/miniatura/{filename}','App\Http\Controllers\SeriesController@getImagen')->name('getImagen');
